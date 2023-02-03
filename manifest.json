@@ -1,0 +1,30 @@
+{
+    "name": "Password Show",
+    "description": "This extension reviels passwords in input fields",
+    "version": "1.0.0",
+    "author": "Bengt Brodersen",
+    "manifest_version": 3,
+    "permissions":  ["scripting"],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "toggle-password": {
+            "suggested_key": {
+                "default": "Ctrl+Period",
+                "mac": "Command+Period"
+
+            },
+            "description": "Show/Hide Password"
+        }
+    },
+    "icons": {
+        "16": "icon-16.png",
+        "48": "icon-48.png",
+        "128": "icon-128.png"
+    }
+}

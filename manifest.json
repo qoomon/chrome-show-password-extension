@@ -1,14 +1,10 @@
 {
     "name": "Password Show",
-    "description": "This extension reviels passwords in input fields",
+    "description": "This extension adds a shortcut to reveal passwords in input fields.",
     "version": "1.0.0",
     "author": "Bengt Brodersen",
     "manifest_version": 3,
-    "permissions":  ["scripting"],
-    "host_permissions": [
-        "http://*/*",
-        "https://*/*"
-    ],
+    "permissions":  ["scripting", "activeTab"],
     "background": {
         "service_worker": "background.js"
     },
@@ -17,9 +13,8 @@
             "suggested_key": {
                 "default": "Ctrl+Period",
                 "mac": "Command+Period"
-
             },
-            "description": "Show/Hide Password"
+            "description": "Toggle Password Mask"
         }
     },
     "icons": {

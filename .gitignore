@@ -1,1 +1,2 @@
-search-engine-blocker.zip
+*.zip
+.idea/

@@ -12,7 +12,7 @@
     }
     
     function revealPassword(passwordElement) {
-        if (document.activeElement.nodeName !== "INPUT" || document.activeElement.type !== "password") return;
+        if (passwordElement.nodeName !== "INPUT" || passwordElement.type !== "password") return;
         passwordElement.type = passwordRevealInputType;
         passwordElement.passwordRevealTimeout = setTimeout(
             () => maskPassword(passwordElement),
@@ -21,7 +21,7 @@
     }
 
     function maskPassword(passwordElement) {
-        if (document.activeElement.nodeName !== "INPUT" | document.activeElement.type !== passwordRevealInputType)  return;
+        if (passwordElement.nodeName !== "INPUT" | passwordElement.type !== passwordRevealInputType)  return;
         passwordElement.type = "password";
         clearTimeout(passwordElement.passwordRevealTimeout);
         delete passwordElement.passwordRevealTimeout;

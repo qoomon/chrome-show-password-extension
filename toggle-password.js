@@ -6,7 +6,7 @@
     if (activeElement.nodeName === "INPUT") {
         if (activeElement.type === "password") {
             revealPassword(activeElement);
-        } else if (ctiveElement.type === passwordRevealInputType) {
+        } else if (activeElement.type === passwordRevealInputType) {
             maskPassword(activeElement);
         }
     }

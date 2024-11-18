@@ -1,29 +1,29 @@
 (function () {
     'use strict';
-    const maskPasswordTimeout = 5000;
+    const passwordRevealTimeout = 5000;
+    const passwordRevealInputType = 'password-reveal';
 
-    if (document.activeElement.nodeName !== "INPUT") return;
-    if (document.activeElement.type !== "password" && !document.activeElement.maskPasswordTimeout) return;
-
-    if (document.activeElement.type === "password") {
-        revealPassword(document.activeElement);
-    } else {
-        maskPassword(document.activeElement);
+    if (activeElement.nodeName === "INPUT") {
+        if (activeElement.type === "password") {
+            revealPassword(activeElement);
+        } else if (ctiveElement.type === passwordRevealInputType) {
+            maskPassword(activeElement);
+        }
     }
-
+    
     function revealPassword(passwordElement) {
         if (document.activeElement.nodeName !== "INPUT" || document.activeElement.type !== "password") return;
-        passwordElement.type = "text";
-        passwordElement.maskPasswordTimeout = setTimeout(
+        passwordElement.type = passwordRevealInputType;
+        passwordElement.passwordRevealTimeout = setTimeout(
             () => maskPassword(passwordElement),
-            maskPasswordTimeout
+            passwordRevealTimeout
         );
     }
 
     function maskPassword(passwordElement) {
-        if (document.activeElement.nodeName !== "INPUT" || !document.activeElement.maskPasswordTimeout) return;
+        if (document.activeElement.nodeName !== "INPUT" | document.activeElement.type !== passwordRevealInputType)  return;
         passwordElement.type = "password";
-        clearTimeout(passwordElement.maskPasswordTimeout);
-        delete passwordElement.maskPasswordTimeout;
+        clearTimeout(passwordElement.passwordRevealTimeout);
+        delete passwordElement.passwordRevealTimeout;
     }
 })();

@@ -1,7 +1,7 @@
 {
     "name": "Password Show",
     "description": "This extension adds a shortcut to reveal passwords in input fields.",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "author": "Bengt Brodersen",
     "manifest_version": 3,
     "permissions":  ["scripting", "activeTab"],
